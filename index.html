@@ -6,7 +6,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
+<link rel="stylesheet" src="css/style.css">
+<script src="js/js_file.js"></script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 <body>
-    <p>Hello World Of Fun </p>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <main class="main">
+		<h1>bxSlider for the Blog</h1>
+		
+		<section class="section">
+			<div class="slider">
+				<div class="slider__content">
+					<!-- Item 1 -->
+					<figure class="slider__item slide">
+						<div class="slide__img-wrap">
+							<a href="#"><img src="https://images.unsplash.com/photo-1513886058874-d4d0e7be32a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="Img description" /></a>
+						</div>
+						<figcaption class="slide__description">
+							<p><time datetime="2019-12-25">december 25, 2019</time></p>
+							<p><a href="#">CategoryName</a></p>
+							<h2><a href="#">The title of the most interesting and popular blog post</a></h2>
+						</figcaption>
+					</figure>
+					
+					<!-- Item 2 -->
+					<figure class="slider__item slide">
+						<div class="slide__img-wrap">
+							<a href="#"><img src="https://images.unsplash.com/photo-1513201099705-a9746e1e201f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80" alt="Img description" /></a>
+						</div>
+						<figcaption class="slide__description">
+							<p><time datetime="2019-12-24">december 24, 2019</time></p>
+							<p><a href="#">CategoryName</a></p>
+							<h2><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a></h2>
+						</figcaption>
+					</figure>
+					
+					<!-- Item 3 -->
+					<figure class="slider__item slide">
+						<div class="slide__img-wrap">
+							<a href="#"><img src="https://images.unsplash.com/photo-1511434139893-de3e59cdeee5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80" alt="Img description" /></a>
+						</div>
+						<figcaption class="slide__description">
+							<p><time datetime="2019-12-23">december 23, 2019</time></p>
+							<p><a href="#">CategoryName</a></p>
+							<h2><a href="#">Vestibulum ante ipsum primis in faucibus orci luctus</a></h2>
+						</figcaption>
+					</figure>
+				</div>
+			</div>
+		</section>
+	</main>
+
+      <nav class="navbar  navbar-expand-sm navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Footer Navbar Content </a>
+        </div>
+    </nav>
 </body>
 </html>

@@ -1,0 +1,377 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald:300,400|Roboto:300&display=swap");
+
+/** 
+ * Reset Styles 
+ */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+img {
+	border-style: none;
+	height: auto;
+}
+
+a img {
+	border: none;
+	outline: none;
+}
+
+figure {
+	display: block;
+	background-color: #fff;
+	-ms-interpolation-mode: bicubic;
+}
+
+figure img {
+	display: block;
+	width: auto;
+	max-width: 100%;
+}
+
+/**
+ * Variables
+ */
+:root {
+	--master-color: #c19f63;
+	--master-color-partner-dark: #7c591d;
+	
+	--headings-color: #263358;	
+	
+	--main-bg-color: #fff;
+	--secondary1-bg-color: #f6f6f6;
+	--secondary2-bg-color: #fff0ec;
+	
+	--main-txt-color: #333;
+	--secondary-txt-color: #757575;
+	
+	--sub-color: #b4b4b4;
+} 
+
+/** 
+ * Typography
+ */
+body {
+	font-family: 'Roboto', Tahoma, sans-serif;
+	font-size: 125%;
+	font-style: normal;
+	font-weight: 300;
+	line-height: 1.8em;
+	
+	color: var(--main-txt-color);
+	background: var(--main-bg-color);
+}
+
+h1, h2 {
+	display: block;
+	font-family: 'Oswald', sans-serif;
+	font-style: normal;
+	line-height: 1.4em;
+	color: var(--headings-color);
+}
+
+h1 {
+	font-size: calc(22px + .8vw);
+	margin: .5em 0 1em;
+}
+
+h2 {
+	font-size: calc(22px + 2vw);
+	margin-bottom: calc(1em + 1vw);
+}
+
+a {
+	color: var(--master-color);
+	text-decoration: none;
+	border-bottom: 1px var(--master-color) solid; 
+	background-color: transparent;
+	outline: none;
+}
+
+a:hover {
+	color: var(--master-color-partner-dark);
+}
+
+a:focus {
+	color: var(--headings-color);
+	background-color: var(--secondary2-bg-color); 
+}
+
+h1 a,
+h2 a {
+	border: none;
+	color: var(--headings-color);
+	background-color: transparent;
+	outline: none;
+}
+
+p {
+	margin: calc(.5em + .5vw) 0;
+}
+
+/**
+ * Page Layout
+ */
+html, body { height: 100%; } 
+ 
+.main {
+	display: grid;
+	grid-template-columns: minmax(1em, 1fr) minmax(0, 1000px) minmax(1em, 1fr); 
+}
+
+.main > * {
+	grid-column: 2 / 3;
+}
+
+.section {
+	grid-column: 1 / 3;
+	
+	display: grid; /* subgrid */
+	grid-template-columns: minmax(1em, 1fr) minmax(0, 1000px);
+	
+	background-image: linear-gradient(to bottom, #fff 0%, #fff 30%, var(--secondary1-bg-color) 30%, var(--secondary1-bg-color) 100%);
+	margin-bottom: 4em;
+}
+
+.slider {
+	grid-column: 2 / 3;
+}
+
+/**
+ * Slider
+ */
+.bx-wrapper {
+	position: relative;
+	-ms-touch-action: pan-y;
+	touch-action: pan-y;
+	
+	background-image: linear-gradient(to right, transparent 0%, transparent 50%, #fff 50%, #fff 100%);
+}
+
+.bx-viewport {
+	z-index: 10;
+	-webkit-transform: translatez(0); 
+}
+
+.slider {
+	visibility: hidden;
+}
+
+.slider,
+.slider__content,
+.slider__item {
+	-webkit-backface-visibility: hidden;
+			backface-visibility: hidden;
+}
+
+/**
+ * One Slide
+ */
+.slide {
+	margin: 0;
+    background-color: transparent;
+}
+
+.slide__img-wrap {
+	width: 100%;
+	padding-top: 56.25%;
+	position: relative;
+	overflow: hidden;
+}
+
+.slide__img-wrap a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.slide__img-wrap img {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+}
+
+.slide__description {
+	position: relative;
+	padding: 1em 3em;
+    margin: -8em 0 0 50%;
+    background: #fff;
+	color: var(--sub-color);
+	font-weight: 300;
+	font-style: normal;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+
+/**
+ * Slider Controls 
+ */
+.bx-controls { 
+	position: absolute;
+	top: 0;
+	right: 50%;
+	padding-top: 56.25%;
+}
+
+.bx-controls-direction {
+	z-index: 11;
+	position: relative;
+}
+
+.bx-prev,
+.bx-next {
+	display: inline-block;
+	font-size: 1.8em; /* relative body font-size */
+	width: 1.5em; /* relative $this font-size */
+    height: 1.5em;
+	line-height: 1.5em;
+	border: none;
+	background: var(--master-color); 
+	color: #fff;
+	text-align: center;
+} 
+
+.bx-prev {
+	border-right: 1px #fff solid;
+}
+
+.bx-controls a:hover,
+.bx-controls a:focus {
+	outline: none;
+	color: var(--headings-color);
+    background-color: var(--secondary2-bg-color);
+}
+
+.bx-wrapper .bx-controls-direction a.disabled {
+	display: none;
+}
+
+.slider .pager {
+	position: absolute;
+	top: 0;
+	right: 50%;
+	padding-top: 57%;
+	margin-right: 6em;
+	z-index: 9;
+	
+	font-family: 'Oswald', sans-serif;
+    font-size: 1em;
+	font-weight: 400;
+    text-align: center;
+    color: var(--secondary-txt-color);
+}
+
+.pager .curr-item {
+    font-size: 1.778em;
+}
+
+.pager .curr-item:after {
+	content: '/';
+	display: inline-block;
+	font-size: .6em;
+	margin: 0 .25em;
+}
+
+.bx-wrapper .bx-loading {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: #fff;
+	z-index: 2000;
+}
+
+.bx-wrapper .bx-loading:after {
+    font-size: 2em;
+	content: "\27F3";
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	
+	-webkit-animation: fa-spin 2s infinite steps(8); 
+			animation: fa-spin 2s infinite steps(8);
+}
+
+/**
+ * 3.0 Breakpoint 901px
+ */
+@media all and (max-width: 900px) {
+	body {
+		font-size: 112.5%;
+		line-height: 1.6em;
+	}
+	
+	
+	/**
+	 * Slider
+	 */
+	.bx-wrapper {
+		background-image: linear-gradient(to right, transparent 0%, transparent 4em, #fff 4em, #fff 100%);
+	} 
+	
+	.slide__description {
+		padding: 1em 2em;
+		margin: -2em 0 0 4em;
+	}
+	
+	/**
+	 * Slider Controls 
+	 */
+	.bx-prev,
+	.bx-next {
+		display: block;
+	}
+	
+	.bx-prev {
+		border-right: none;
+		border-bottom: 1px #fff solid;
+	}
+	
+	.slider .bx-controls {
+		margin-top: 0;
+		right: calc(100% - 4em);
+	}
+	
+	.slider .bx-controls .bx-controls-direction {
+		margin-top: 0;
+	}
+	
+	.slider .pager {
+		right: calc(100% - 3.5em);
+		margin: 6em 0 0 0;
+	}
+	
+	.slider .pager .curr-item {
+		display: block;
+		border-bottom: 1px var(--secondary-txt-color) solid;
+		padding-bottom: .25em;
+	}
+	
+	.slider .pager .curr-item:after {
+		display: none;
+	} 
+}
+
+/**
+ * 4.0 Breakpoint 769px 
+ */
+@media all and (max-width: 769px) { 
+	.slide__img-wrap { width: 99%; } /* bug fix */
+}
